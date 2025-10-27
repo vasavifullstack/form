@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'form';
+  user={
+    username:'',
+    email:'',
+    password:'',
+    usernum:''
+  };
+  onSubmit(form: any) {
+    console.log('Form Submitted:', form.value);
+  }
+
 }
