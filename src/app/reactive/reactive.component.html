@@ -1,0 +1,72 @@
+<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit">
+  
+  <!- USERNAME -->
+  <!--<div class="form-group">
+    <label for="Username">User Name *</label>
+    <input
+      id="Username"
+      type="text"
+      name="username"
+      class="form-control"
+      placeholder="Name of the user"
+      formControlName="username"
+    />
+    <span style="color:red"
+    *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.errors?.['required']">
+    
+  please enter the username</span>
+</div>
+-->
+<div class="container d-flex align-items-center justify-content-center vh-100">
+  <div class="card shadow-lg p-4" style="width: 380px; border-radius: 15px;">
+    <h1 class="text-center mb-4 text-primary">R2R🪂</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <!-- EMAIL -->
+      <div class="mb-3">
+        <label for="email" class="form-label fw-semibold">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Enter your email"
+        />
+        <div class="text-danger small mt-1" *ngIf="submitted && f['email'].errors">
+          <div *ngIf="f['email'].errors['required']">Email is required</div>
+          <div *ngIf="f['email'].errors['email']">Enter a valid email</div>
+        </div>
+      </div>
+
+      <!-- PASSWORD -->
+      <div class="mb-3">
+        <label for="password" class="form-label fw-semibold">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+        <div class="text-danger small mt-1" *ngIf="submitted && f['password'].errors">
+          <div *ngIf="f['password'].errors['required']">Password is required</div>
+          <div *ngIf="f['password'].errors['minlength']">
+            Password must be at least 6 characters
+          </div>
+        </div>
+      </div>
+
+      <!-- BUTTON -->
+      <button class="btn btn-primary w-100 py-2" type="submit">
+        Login
+      </button>
+
+      <!-- EXTRA -->
+      <div class="text-center mt-3">
+        <small class="text-muted">Don't have an account?</small>
+        <a href="#" class="text-decoration-none"> Sign up</a>
+      </div>
+    </form>
+  </div>
+</div>
